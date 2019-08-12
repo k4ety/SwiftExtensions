@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-private let rotationAnimationKey = "com.NexTraq.rotationAnimationKey"
+private let rotationAnimationKey = "rotationAnimationKey"
 public protocol UIViewLoading {}
 extension UIView : UIViewLoading {}
 

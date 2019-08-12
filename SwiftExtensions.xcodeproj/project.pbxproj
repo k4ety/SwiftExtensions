@@ -31,7 +31,6 @@
 		5372418C20B88A6600F7F117 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372418B20B88A6600F7F117 /* NSManagedObjectContext.swift */; };
 		53749C7A21231F3600BCDD1B /* UIAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53749C7921231F3600BCDD1B /* UIAlertView.swift */; };
 		537D6BAC1FABE1B40061C13D /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D6BAB1FABE1B40061C13D /* Atomic.swift */; };
-		538B2F4C1FA790F400111720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538B2F4B1FA790F400111720 /* AppDelegate.swift */; };
 		538E3D081FBB7AE4008E43BD /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538E3D071FBB7AE4008E43BD /* Photos.swift */; };
 		5398FD741F9AA74B009CDAD2 /* Compile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5398FD731F9AA74B009CDAD2 /* Compile.m */; };
 		5398FD771F9ABED2009CDAD2 /* Compile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5398FD751F9AA7C6009CDAD2 /* Compile.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -105,6 +104,8 @@
 		53F7B3981F86865C00DE7C08 /* MKAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7B3601F86865C00DE7C08 /* MKAnnotationView.swift */; };
 		53F7B3991F86865C00DE7C08 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7B3611F86865C00DE7C08 /* UIResponder.swift */; };
 		82DCE43A1FEC4D7400484D0A /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCE4391FEC4D7300484D0A /* URL.swift */; };
+		DAD01F8F2300D045000860DA /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD01F8E2300D045000860DA /* JSONDecoder.swift */; };
+		DADA34FB2301E750002B631F /* PassThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA34FA2301E750002B631F /* PassThroughView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,7 +134,6 @@
 		5372418B20B88A6600F7F117 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		53749C7921231F3600BCDD1B /* UIAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertView.swift; sourceTree = "<group>"; };
 		537D6BAB1FABE1B40061C13D /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
-		538B2F4B1FA790F400111720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		538E3D071FBB7AE4008E43BD /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		5398FD731F9AA74B009CDAD2 /* Compile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Compile.m; sourceTree = "<group>"; };
 		5398FD751F9AA7C6009CDAD2 /* Compile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Compile.h; sourceTree = "<group>"; };
@@ -213,6 +213,8 @@
 		5D60868A6A1F1CF10E91EF3F /* Pods_SwiftExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DCE4391FEC4D7300484D0A /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		DA11C89222EA4BEB00B27C0B /* SwiftExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAD01F8E2300D045000860DA /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		DADA34FA2301E750002B631F /* PassThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassThroughView.swift; sourceTree = "<group>"; };
 		EA0CD34C11EA7021F1192ECB /* Pods-SwiftExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftExtensions.debug.xcconfig"; path = "Target Support Files/Pods-SwiftExtensions/Pods-SwiftExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,7 +278,6 @@
 				534708FD2126137900C98632 /* AnalogClock.swift */,
 				53311362217A73E600D9731B /* AnswersWrapper.swift */,
 				53F7B3481F86865A00DE7C08 /* App.swift */,
-				538B2F4B1FA790F400111720 /* AppDelegate.swift */,
 				5314734D1FA3A8690089970D /* AppStore.swift */,
 				53F7B32C1F86865700DE7C08 /* Array.swift */,
 				537D6BAB1FABE1B40061C13D /* Atomic.swift */,
@@ -307,6 +308,7 @@
 				53F20AA320F9452400B65E96 /* Int32.swift */,
 				53F7B34C1F86865A00DE7C08 /* Integer.swift */,
 				53F7B3521F86865B00DE7C08 /* JSON.swift */,
+				DAD01F8E2300D045000860DA /* JSONDecoder.swift */,
 				53F7B32E1F86865700DE7C08 /* Logging.swift */,
 				53F7B3601F86865C00DE7C08 /* MKAnnotationView.swift */,
 				53F7B3571F86865B00DE7C08 /* MKCoordinateRegion.swift */,
@@ -331,6 +333,7 @@
 				53F7B32F1F86865700DE7C08 /* StatusBarNotification.swift */,
 				53F7B3301F86865700DE7C08 /* OperationQueue.swift */,
 				53F7B3581F86865B00DE7C08 /* Optional.swift */,
+				DADA34FA2301E750002B631F /* PassThroughView.swift */,
 				539AB5DF1F883DFB00E39963 /* Path.swift */,
 				538E3D071FBB7AE4008E43BD /* Photos.swift */,
 				53F7B35A1F86865B00DE7C08 /* Reachability.swift */,
@@ -422,7 +425,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = NexTraq;
+				ORGANIZATIONNAME = "Paul King";
 				TargetAttributes = {
 					53F7B31E1F86860200DE7C08 = {
 						CreatedOnToolsVersion = 9.1;
@@ -508,9 +511,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5398FD741F9AA74B009CDAD2 /* Compile.m in Sources */,
-				538B2F4C1FA790F400111720 /* AppDelegate.swift in Sources */,
 				53A71899212E13FA009580CA /* Siri.swift in Sources */,
 				539AB5E01F883DFB00E39963 /* Path.swift in Sources */,
+				DADA34FB2301E750002B631F /* PassThroughView.swift in Sources */,
 				53F7B3861F86865C00DE7C08 /* Double.swift in Sources */,
 				53ED1BF32146EBF2007D6706 /* FileManager.swift in Sources */,
 				53F7B3731F86865C00DE7C08 /* UIApplication.swift in Sources */,
@@ -590,6 +593,7 @@
 				53F7B3691F86865C00DE7C08 /* CLLocationCoordinate2D.swift in Sources */,
 				53F7B3711F86865C00DE7C08 /* MKMapView.swift in Sources */,
 				53F7B38F1F86865C00DE7C08 /* MKCoordinateRegion.swift in Sources */,
+				DAD01F8F2300D045000860DA /* JSONDecoder.swift in Sources */,
 				53A67A3B21FBC755005BED95 /* CLLocationDirection.swift in Sources */,
 				53F7B3961F86865C00DE7C08 /* NSManagedObject.swift in Sources */,
 				53CB7A9D2040929A00ECF949 /* Character.swift in Sources */,

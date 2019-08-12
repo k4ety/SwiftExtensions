@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name                  = 'SwiftExtensions'
-  s.version               = '0.1.6'
+  s.version               = '0.1.0'
   s.summary               = 'Shared Swift extensions'
   s.description           = 'Shared Swift extensions'
   
   s.homepage              = 'https://github.com/k4ety/SwiftExtensions'
-  #  s.license               = { :type => 'Commercial', :text => 'SwiftExtensions: Copyright 2017 NexTraq, Inc.' }
+  #  s.license               = { :type => 'MIT', :text => 'SwiftExtensions: Copyright 2019 Paul King' }
   s.author                = { 'Paul King' => 'paul@k4ety.com' }
   s.source                = { :git => 'https://github.com/k4ety/SwiftExtensions.git', :tag => s.version.to_s }
   s.platform              = :ios, '10.0'

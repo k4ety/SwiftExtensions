@@ -48,7 +48,7 @@ file_length:
   error: 1200
 trailing_whitespace:
   ignores_empty_lines: true
-  ignores_comments: false
+  ignores_comments: true
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
 type_name:

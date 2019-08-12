@@ -3,7 +3,6 @@
 build/
 FauxPasConfig/
 xcuserdata/
-nextraq/
 .swift-version
 xcodebuild.log
 
