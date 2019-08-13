@@ -105,6 +105,7 @@
 		82DCE43A1FEC4D7400484D0A /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCE4391FEC4D7300484D0A /* URL.swift */; };
 		DAD01F8F2300D045000860DA /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD01F8E2300D045000860DA /* JSONDecoder.swift */; };
 		DADA34FB2301E750002B631F /* PassThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA34FA2301E750002B631F /* PassThroughView.swift */; };
+		DADA3521230379CE002B631F /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADA3520230379CE002B631F /* Acknowledgements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +214,7 @@
 		DA11C89222EA4BEB00B27C0B /* SwiftExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD01F8E2300D045000860DA /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		DADA34FA2301E750002B631F /* PassThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassThroughView.swift; sourceTree = "<group>"; };
+		DADA3520230379CE002B631F /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		EA0CD34C11EA7021F1192ECB /* Pods-SwiftExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftExtensions.debug.xcconfig"; path = "Target Support Files/Pods-SwiftExtensions/Pods-SwiftExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +262,7 @@
 				53F7B3211F86860200DE7C08 /* SwiftExtensions */,
 				53F7B3221F86860200DE7C08 /* SwiftExtensions.h */,
 				53F7B3231F86860200DE7C08 /* Info.plist */,
+				DADA3520230379CE002B631F /* Acknowledgements.plist */,
 				53F7B39B1F868D0700DE7C08 /* SwiftExtensions.podspec */,
 				53BCA8001F8C179B00F736C1 /* Podfile */,
 				539AB5DE1F882F1A00E39963 /* .gitignore */,
@@ -454,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DADA3521230379CE002B631F /* Acknowledgements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
