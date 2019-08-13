@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Crashlytics
+//import Crashlytics
 
 public class AnswersWrapper : NSObject {
   

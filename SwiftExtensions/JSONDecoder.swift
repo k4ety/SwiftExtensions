@@ -10,7 +10,7 @@
 
 import Foundation
 
-extension JSONDecoder {
+public extension JSONDecoder {
   func decode<T: Decodable>(_ type: T.Type, fromURL: String, completion: @escaping (T) -> Void) {
     guard let url = URL(string: fromURL) else {
       fatalError("Invalid URL...")

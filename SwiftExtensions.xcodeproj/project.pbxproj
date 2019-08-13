@@ -15,7 +15,6 @@
 		531D91E2217511C300EF5F90 /* NSSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531D91E1217511C300EF5F90 /* NSSet.swift */; };
 		531D91E42175120700EF5F90 /* NSOrderedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531D91E32175120700EF5F90 /* NSOrderedSet.swift */; };
 		531D91EE217518AD00EF5F90 /* NSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531D91ED217518AD00EF5F90 /* NSArray.swift */; };
-		53311363217A73E600D9731B /* AnswersWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53311362217A73E600D9731B /* AnswersWrapper.swift */; };
 		5341E7071FA0E7DC00C5B30D /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341E7061FA0E7DC00C5B30D /* UIScreen.swift */; };
 		534708FE2126137B00C98632 /* AnalogClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534708FD2126137900C98632 /* AnalogClock.swift */; };
 		5347A4E8226E11AF004DE67C /* Demangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347A4E7226E11AF004DE67C /* Demangle.swift */; };
@@ -118,7 +117,6 @@
 		531D91E1217511C300EF5F90 /* NSSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSet.swift; sourceTree = "<group>"; };
 		531D91E32175120700EF5F90 /* NSOrderedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOrderedSet.swift; sourceTree = "<group>"; };
 		531D91ED217518AD00EF5F90 /* NSArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSArray.swift; sourceTree = "<group>"; };
-		53311362217A73E600D9731B /* AnswersWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersWrapper.swift; sourceTree = "<group>"; };
 		5341E7061FA0E7DC00C5B30D /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		534708FD2126137900C98632 /* AnalogClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalogClock.swift; sourceTree = "<group>"; };
 		5347A4E7226E11AF004DE67C /* Demangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demangle.swift; sourceTree = "<group>"; };
@@ -276,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				534708FD2126137900C98632 /* AnalogClock.swift */,
-				53311362217A73E600D9731B /* AnswersWrapper.swift */,
 				53F7B3481F86865A00DE7C08 /* App.swift */,
 				5314734D1FA3A8690089970D /* AppStore.swift */,
 				53F7B32C1F86865700DE7C08 /* Array.swift */,
@@ -568,7 +565,6 @@
 				53F63A7420EBBBE200091AA1 /* UINib.swift in Sources */,
 				53F7B36C1F86865C00DE7C08 /* UITableViewCell.swift in Sources */,
 				53B318CF20D0526900A7F769 /* Conditional.swift in Sources */,
-				53311363217A73E600D9731B /* AnswersWrapper.swift in Sources */,
 				53F7B3851F86865C00DE7C08 /* UIActivityIndicatorView.swift in Sources */,
 				53F7B3941F86865C00DE7C08 /* File.swift in Sources */,
 				53F7B3921F86865C00DE7C08 /* Reachability.swift in Sources */,
@@ -764,10 +760,6 @@
 					"-framework",
 					"\"CoreData\"",
 					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"Fabric\"",
-					"-framework",
 					"\"KeychainAccess\"",
 					"-framework",
 					"\"Security\"",
@@ -817,10 +809,6 @@
 					"-l\"z\"",
 					"-framework",
 					"\"CoreData\"",
-					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"Fabric\"",
 					"-framework",
 					"\"KeychainAccess\"",
 					"-framework",
