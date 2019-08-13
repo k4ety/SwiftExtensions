@@ -71,24 +71,24 @@ public extension CLLocationCoordinate2D {
         break
       case .google:
         if (UIApplication.app?.canOpenURL(URL(string:"comgooglemaps://")!) == true) {
-          DLog("Navigating to \(destination) using google maps.")
+          dlog("Navigating to \(destination) using google maps.")
           UIApplication.app?.open(URL(string: "comgooglemaps://?daddr=\(self.latitude),\(self.longitude)&directionsmode=driving&views=traffic")!, options: [:], completionHandler: nil)
           return
         } else {
-          DLog("Error with navigation provider selection: Google Maps")
+          dlog("Error with navigation provider selection: Google Maps")
         }
       case .waze:
         if (UIApplication.app?.canOpenURL(URL(string:"waze://")!) == true) {
-          DLog("Navigating to \(destination) using google maps.")
+          dlog("Navigating to \(destination) using google maps.")
           UIApplication.app?.open(URL(string: "waze://?ll=\(self.latitude),\(self.longitude)&navigate=yes")!, options: [:], completionHandler: nil)
           return
         } else {
-          DLog("Error with navigation provider selection: Waze")
+          dlog("Error with navigation provider selection: Waze")
         }
       }
       // If attempt to use .google or .waze failed or .apple settings option is selected
       if (UIApplication.app?.canOpenURL(URL(string: "http://maps.apple.com")!) == true) {
-        DLog("Navigating to \(destination) using apple maps.")
+        dlog("Navigating to \(destination) using apple maps.")
         UIApplication.app?.open(URL(string: "http://maps.apple.com/?daddr=\(self.latitude),\(self.longitude)&dirflg=d")!, options: [:], completionHandler: nil)
         return
       }

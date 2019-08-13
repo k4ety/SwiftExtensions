@@ -139,14 +139,14 @@ public extension UIImage {
                 bottom  = max(row, bottom)
                 left    = min(column, left)
                 right   = max(column, right)
-//                DLog("(\(row):\(column))  ->  top: \(top), bottom: \(bottom), left: \(left), right: \(right) ")
+//                dlog("(\(row):\(column))  ->  top: \(top), bottom: \(bottom), left: \(left), right: \(right) ")
               }
             }
           }
         }
         if top < bottom && left < right {
           let rect = CGRect(x: left, y: top, width: right-left, height: bottom-top)
-//          DLog("x: \(rect.origin.x), y: \(rect.origin.y), width: \(rect.size.width), height: \(rect.size.height)")
+//          dlog("x: \(rect.origin.x), y: \(rect.origin.y), width: \(rect.size.width), height: \(rect.size.height)")
           return rect
         }
       }

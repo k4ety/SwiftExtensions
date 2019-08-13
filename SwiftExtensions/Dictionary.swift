@@ -152,7 +152,7 @@ public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
       if let jsonStr = NSString(data: json, encoding: String.Encoding.utf8.rawValue) as String? {
         return jsonStr
       }
-      DLog("Error occurred while converting NSData to string: \(json)")
+      dlog("Error occurred while converting NSData to string: \(json)")
     } catch {
       let error = error as NSError
       error.logErrors()
@@ -185,7 +185,7 @@ public func sortedJSON(_ object: AnyObject, level: Int?=0, element: String?=nil,
     elementName = element
     if elementName == "polygon" {return ">"}
   }
-//  DLog("\(elementName): \(level)")
+//  dlog("\(elementName): \(level)")
   
   var output = ""
   if let dict = object as? [String: AnyObject] {                              // Dictionary Elements

@@ -65,7 +65,7 @@ public func getFile(_ urlString: String) {
             if (download) {
               if let file = try? Data(contentsOf: url) {
                 try? file.write(to: URL(fileURLWithPath: filePath), options: [.atomic])
-                DLog("Finished downloading new \(fileName) file.")
+                dlog("Finished downloading new \(fileName) file.")
                 // Set the file modification date to the timestamp from the server
                 let fileAttributes = [FileAttributeKey.init("NSFileModificationDate"): lastModifiedServer]
                 do {

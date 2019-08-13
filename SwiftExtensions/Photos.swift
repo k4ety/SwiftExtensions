@@ -54,16 +54,16 @@ public func fetchPhoto(options: PHFetchOptions) -> UIImage? {
           )
         }
       case .denied:
-        DLog("Access to photos is denied")
+        dlog("Access to photos is denied")
         semaphore.signal()
       case .notDetermined:
-        DLog("Access to photos is not determined")
+        dlog("Access to photos is not determined")
         semaphore.signal()
       case .restricted:
-        DLog("Access to photos is restricted")
+        dlog("Access to photos is restricted")
         semaphore.signal()
       @unknown default:
-        DLog("Access to photos is unknown")
+        dlog("Access to photos is unknown")
         semaphore.signal()
       }
     }

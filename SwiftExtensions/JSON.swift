@@ -16,7 +16,7 @@ public func jsonString(_ input: Any?) -> String {
   if let input = input {
     if !(input is NSNull) {
       if let input = unwrap(input) {
-        DLog("Missing \(input)")
+        dlog("Missing \(input)")
       }
     }
   }
@@ -31,7 +31,7 @@ public func jsonBool(_ input: Any?) -> Bool {
       }
       if !(input is NSNull) {
         if let input = unwrap(input) {
-          DLog("Missing \(input)")
+          dlog("Missing \(input)")
         }
       }
     }
@@ -47,13 +47,13 @@ public func jsonInt(_ input: Any?) -> Int32 {
     if input == nil {return 0}
     let number = jsonIntPart(input)
     if number != 0 {
-      DLog("Found Int repesented as string: \(input!) (returned Int).")
+      dlog("Found Int repesented as string: \(input!) (returned Int).")
       return number
     }
 
     let input = "\(input!)"
     if input != "nil" {
-      DLog("Missing \(input)")
+      dlog("Missing \(input)")
     }
     return 0
   }
@@ -92,7 +92,7 @@ public func jsonDouble(_ input: Any?) -> Double {
   }
   if !(input is NSNull) {
     if let input = unwrap(input) {
-      DLog("Missing \(input)")
+      dlog("Missing \(input)")
     }
   }
   return 0
@@ -131,7 +131,7 @@ public func jsonDate(_ input: Any?) -> TimeInterval {
   }
   if !(input is NSNull) {
     if let input = unwrap(input) {
-      DLog("Missing \(input)")
+      dlog("Missing \(input)")
     }
   }
   return 0
@@ -160,7 +160,7 @@ public func jsonAltDate(_ input: Any?) -> Date {
   }
   if !(input is NSNull) {
     if let input = unwrap(input) {
-      DLog("Missing \(input)")
+      dlog("Missing \(input)")
     }
   }
   return Date.init()
@@ -182,7 +182,7 @@ public func jsonPoint(_ input: Any?) -> [String: Double] {
   }
   if !(input is NSNull) {
     if let input = unwrap(input) {
-      DLog("Missing \(input)")
+      dlog("Missing \(input)")
     }
   }
   return jsonLocation(0, longitude: 0)
@@ -225,7 +225,7 @@ public func jsonData(_ input: Any?) -> Data? {
   }
   if !(input is NSNull) {
     if let input = unwrap(input) {
-      DLog("Missing \(input)")
+      dlog("Missing \(input)")
     }
   }
   return nil
@@ -272,6 +272,6 @@ public func jsonKeyValuePairs (_ array: Any?, keyName: String?="name", valueName
       }
     }
   }
-  //  DLog("\(keyValues)")
+  //  dlog("\(keyValues)")
   return keyValues
 }

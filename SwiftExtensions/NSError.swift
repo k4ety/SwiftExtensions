@@ -22,7 +22,7 @@ public extension NSError {
     if self.domain == "NSCocoaErrorDomain" {
       if let errors = self.userInfo["NSDetailedErrors"] as? [NSError] {
         if let errorMsg = errors.first?.userInfo["NSValidationErrorObject"] {
-          DLogNoHeader("> NSValidationErrorObject: \(errorMsg)")
+          dlogNoHeader("> NSValidationErrorObject: \(errorMsg)")
         }
         for error in errors {
           logErrorUserInfo(error.userInfo)
@@ -37,12 +37,12 @@ public extension NSError {
 
 public func logErrorUserInfo(_ userInfo: [AnyHashable: Any]) {
   if let errorMsg = userInfo["NSValidationErrorKey"] {
-    DLogNoHeader("NSValidationErrorKey: \(errorMsg)")
+    dlogNoHeader("NSValidationErrorKey: \(errorMsg)")
   }
   if let errorMsg = userInfo["NSValidationErrorValue"] {
-    DLogNoHeader("NSValidationErrorValue: \(errorMsg)")
+    dlogNoHeader("NSValidationErrorValue: \(errorMsg)")
   }
   if let errorMsg = userInfo["NSValidationErrorPredicate"] {
-    DLogNoHeader("\n> NSValidationErrorPredicate: \(errorMsg)")
+    dlogNoHeader("\n> NSValidationErrorPredicate: \(errorMsg)")
   }
 }

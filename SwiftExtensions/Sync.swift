@@ -42,13 +42,13 @@ public struct Sync {
     }
     if Thread.isMainThread {
       if threadWarning {
-        DLog("Warning! Using semaphores on the main thread would cause a deadlock! Skipping wait...")
+        dlog("Warning! Using semaphores on the main thread would cause a deadlock! Skipping wait...")
         for entry in Thread.callStackSymbols {
           if let mangledName = entry.split(separator: "$").second?.split(separator: " ").first?.string {
             if let callerName = try? parseMangledSwiftSymbol(mangledName).text {
-              DLogNoHeader(callerName)
+              dlogNoHeader(callerName)
             } else {
-              DLogNoHeader(mangledName)
+              dlogNoHeader(mangledName)
             }
           }
         }

@@ -96,7 +96,7 @@ public class AnalogClock: UIView {
     let minY = centerPoint.y - minRadius * cos(minDegrees.degreesToRadians)
     let minPoint = CGPoint(x: minX, y: minY)
 
-//    DLog("\(hours):\(minutes) (\(hourDegrees)º : \(minDegrees)º)")
+//    dlog("\(hours):\(minutes) (\(hourDegrees)º : \(minDegrees)º)")
 
     if let context = UIGraphicsGetCurrentContext() {
       tintColor.setStroke()

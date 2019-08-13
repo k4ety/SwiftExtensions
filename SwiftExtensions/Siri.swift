@@ -16,17 +16,17 @@ private let cancelTitle = NSLocalizedString("Cancel", comment: " ")
 //if user hasn't already allowed Siri permisions, we request the user to authorize Siri
 public func requestSiriAuthorization() {
   if INPreferences.siriAuthorizationStatus() == .denied || INPreferences.siriAuthorizationStatus() == .restricted {
-    DLog("Use of Siri has been restricted or denied by user.")
+    dlog("Use of Siri has been restricted or denied by user.")
   } else {
     if INPreferences.siriAuthorizationStatus() == .notDetermined {
       INPreferences.requestSiriAuthorization { (status) in
         switch status {
         case .authorized:
-          DLog("Use of Siri has been authorized by user.")
+          dlog("Use of Siri has been authorized by user.")
         case .denied:
-          DLog("Use of Siri has been denied by user.")
+          dlog("Use of Siri has been denied by user.")
         case .restricted:
-          DLog("Use of Siri has been restricted.")
+          dlog("Use of Siri has been restricted.")
         case .notDetermined:
           break
         @unknown default:

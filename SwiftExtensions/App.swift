@@ -281,7 +281,7 @@ public var appConfigPList: [String: Any] {
       }
       _appConfigPList = configDictionary
     } else {
-      DLog("Error reading App config plist from bundle.")
+      dlog("Error reading App config plist from bundle.")
     }
     return configDictionary
   }
@@ -291,7 +291,7 @@ public func appConfig(_ key: String) -> String? {
   if let value = appConfigPList[key] as? String {
     return value
   }
-  DLog("Error reading App config plist entry for \(key).")
+  dlog("Error reading App config plist entry for \(key).")
   return nil
 }
 
@@ -303,7 +303,7 @@ public func appConfigNum(_ key: String) -> Int? {
   if let value = appConfigPList[key] as? Int {
     return value
   }
-  DLog("Error reading App config plist entry for \(key).")
+  dlog("Error reading App config plist entry for \(key).")
   return nil
 }
 

@@ -18,7 +18,7 @@ public func *= ( left: inout MKMapRect, right: Double) {
 }
 
 public func == (lhs: MKMapRect, rhs: MKMapRect) -> Bool {
-  //  DLog("\n\(lhs.origin)\n\(rhs.origin)\n\(lhs.size)\n\(rhs.size)")
+  //  dlog("\n\(lhs.origin)\n\(rhs.origin)\n\(lhs.size)\n\(rhs.size)")
   if lhs.origin.x.roundToInt() != rhs.origin.x.roundToInt() {return false}
   if lhs.origin.y.roundToInt() != rhs.origin.y.roundToInt() {return false}
   if lhs.size.width.roundToInt() != rhs.size.width.roundToInt() {return false}

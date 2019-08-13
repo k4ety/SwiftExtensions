@@ -37,7 +37,7 @@ public extension Date {
   }
   
   static var firstWeekday: Int {
-//    DLog("Locale: \(Locale.current) first day of week: \(NSCalendar.current.firstWeekday)")
+//    dlog("Locale: \(Locale.current) first day of week: \(NSCalendar.current.firstWeekday)")
     return Calendar.current.firstWeekday
   }
   
@@ -165,7 +165,7 @@ public extension Date {
     return dateFormatter.string(from: self)
   }
   
-  func formattedLogDateTime() -> String {
+  func formattedlogDateTime() -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.locale = en_US_Locale
     dateFormatter.timeZone = Foundation.TimeZone.autoupdatingCurrent

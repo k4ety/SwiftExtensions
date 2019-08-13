@@ -22,7 +22,7 @@ private let whiteSpaceCharacterSet = CharacterSet.whitespaces
 private let keychain = Keychain(service: appBundleID)
 
 //public var crashlyticsInstance: Crashlytics?
-// Initialize Fabric/Crashlytics once upon first use of DLog
+// Initialize Fabric/Crashlytics once upon first use of dlog
 //public func crashlyticsInstance(delegate: CrashlyticsDelegate) -> Crashlytics? {
 //  if !isRunningUnitTest {
 //    Crashlytics.sharedInstance().delegate = delegate
@@ -58,12 +58,12 @@ public class Logging: NSObject {
       cellularDataRestrictedState = dataRestrictedState
     }
     
-    DLog("\n")
-    DLogNoHeader("========================================================================================================")
+    dlog("\n")
+    dlogNoHeader("========================================================================================================")
     // App version and update logging for analytics and crash reporting
-    DLogNoHeader(appNameAndVersionNumberDisplayString)
+    dlogNoHeader(appNameAndVersionNumberDisplayString)
     if appNameAndVersionNumberDisplayString != bundleNameAndVersionNumberDisplayString {
-      DLogNoHeader(bundleNameAndVersionNumberDisplayString)
+      dlogNoHeader(bundleNameAndVersionNumberDisplayString)
     }
 
     var appVersion = UserDefaults.standard.string(forKey: "appVersion") ?? ""
@@ -79,16 +79,16 @@ public class Logging: NSObject {
       appVersion = appVersionNumberDisplayString
       if prevVersion == "" {
 //        logAnalyticsEvent("app", action: "newInstall", label: appVersion)               // App is newly installed (no previous version has been installed)
-        DLogNoHeader("App newly installed: version \(appVersion)")
+        dlogNoHeader("App newly installed: version \(appVersion)")
 //        crashlyticsInstance?.setObjectValue(appVersion, forKey: "newInstall")
       } else {
         if let lastVersion = UserDefaults.standard.string(forKey: "appVersion") {
 //          logAnalyticsEvent("app", action: "updateFromVersion", label: lastVersion)     // App has been updated since last used (previously lastVersion)
-          DLogNoHeader("App updated from \(lastVersion) to \(appVersion)")
+          dlogNoHeader("App updated from \(lastVersion) to \(appVersion)")
 //          crashlyticsInstance?.setObjectValue(lastVersion, forKey: "updateFromVersion")
         } else {
 //          logAnalyticsEvent("app", action: "reinstallFromVersion", label: prevVersion)  // App has been uninstalled then reinstalled (previously prevVersion)
-          DLogNoHeader("App reinstalled: was \(prevVersion), now \(appVersion)")
+          dlogNoHeader("App reinstalled: was \(prevVersion), now \(appVersion)")
 //          crashlyticsInstance?.setObjectValue(prevVersion, forKey: "reinstallFromVersion")
         }
       }
@@ -105,88 +105,88 @@ public class Logging: NSObject {
 
     var pad = 28
     let installDate = appInstallDate.formattedDateTime()
-    DLogNoHeader("installDate".left(pad, pad: true) + ": " + "\(installDate)")
+    dlogNoHeader("installDate".left(pad, pad: true) + ": " + "\(installDate)")
 //    crashlyticsInstance?.setObjectValue(installDate, forKey: "appInstallDate")
 
     let buildDate = bundleBuildDate.formattedDateTime()
-    DLogNoHeader("compileDate".left(pad, pad: true) + ": " + "\(buildDate)")
+    dlogNoHeader("compileDate".left(pad, pad: true) + ": " + "\(buildDate)")
 //    crashlyticsInstance?.setObjectValue(buildDate, forKey: "appBuildDate")
     
     let updateDate = appUpdateDate.formattedDateTime()
-    DLogNoHeader("updatedDate".left(pad, pad: true) + ": " + "\(updateDate)")
+    dlogNoHeader("updatedDate".left(pad, pad: true) + ": " + "\(updateDate)")
 //    crashlyticsInstance?.setObjectValue(updateDate, forKey: "appUpdateDate")
     
     let deviceType = UIDevice.current.modelCodeDisplay
-    DLogNoHeader("deviceCode".left(pad, pad: true) + ": " + "\(deviceType)")
+    dlogNoHeader("deviceCode".left(pad, pad: true) + ": " + "\(deviceType)")
 //    crashlyticsInstance?.setObjectValue(deviceType, forKey: "deviceCode")
     
     let deviceName = UIDevice.current.modelName
-    DLogNoHeader("deviceName".left(pad, pad: true) + ": " + "\(deviceName)")
+    dlogNoHeader("deviceName".left(pad, pad: true) + ": " + "\(deviceName)")
 //    crashlyticsInstance?.setObjectValue(deviceName, forKey: "deviceName")
     
     let name = UIDevice.current.name
-    DLogNoHeader("name".left(pad, pad: true) + ": " + "\(name)")
+    dlogNoHeader("name".left(pad, pad: true) + ": " + "\(name)")
 //    crashlyticsInstance?.setObjectValue(name, forKey: "name")
     
     let orientation = UIDevice.current.orientation.isAny(of: .portrait, .portraitUpsideDown, .faceUp, .faceDown) ? "portrait" : "landscape"
-    DLogNoHeader("Device Orientation".left(pad, pad: true) + ": " + "\(orientation)")
+    dlogNoHeader("Device Orientation".left(pad, pad: true) + ": " + "\(orientation)")
 //    crashlyticsInstance?.setObjectValue(orientation, forKey: "deviceOrientation")
     
     let osVersion = "iOS \(ProcessInfo().operatingSystemVersionString)"
-    DLogNoHeader("osVersion".left(pad, pad: true) + ": " + "\(osVersion)")
+    dlogNoHeader("osVersion".left(pad, pad: true) + ": " + "\(osVersion)")
 //    crashlyticsInstance?.setObjectValue(osVersion, forKey: "osVersion")
 
     let systemUpTime = ProcessInfo().systemUptime.formattedDays()
-    DLogNoHeader("systemUpTime".left(pad, pad: true) + ": " + "\(systemUpTime)")
+    dlogNoHeader("systemUpTime".left(pad, pad: true) + ": " + "\(systemUpTime)")
 //    crashlyticsInstance?.setObjectValue(systemUpTime, forKey: "systemUpTime")
     
     let isZoomedMode = UIScreen.main.isZoomedMode
-    DLogNoHeader("isZoomedMode".left(pad, pad: true) + ": " + "\(isZoomedMode)")
+    dlogNoHeader("isZoomedMode".left(pad, pad: true) + ": " + "\(isZoomedMode)")
 //    crashlyticsInstance?.setObjectValue(isZoomedMode, forKey: "isZoomedMode")
     
-    DLogNoHeader("Process Name".left(pad, pad: true) + ": " + "\(ProcessInfo().processName)")
-    DLogNoHeader("Host Name".left(pad, pad: true) + ": " + "\(ProcessInfo().hostName)")
-    DLogNoHeader("Processor Count".left(pad, pad: true) + ": " + "\(ProcessInfo().processorCount)")
-    DLogNoHeader("Active Processor Count".left(pad, pad: true) + ": " + "\(ProcessInfo().activeProcessorCount)")
-    DLogNoHeader("Physical Memory".left(pad, pad: true) + ": " + "\(Double(ProcessInfo().physicalMemory)/1073741824) G")
-    DLogNoHeader("Thermal State".left(pad, pad: true) + ": " + "\(UIDevice.current.thermalState)")
+    dlogNoHeader("Process Name".left(pad, pad: true) + ": " + "\(ProcessInfo().processName)")
+    dlogNoHeader("Host Name".left(pad, pad: true) + ": " + "\(ProcessInfo().hostName)")
+    dlogNoHeader("Processor Count".left(pad, pad: true) + ": " + "\(ProcessInfo().processorCount)")
+    dlogNoHeader("Active Processor Count".left(pad, pad: true) + ": " + "\(ProcessInfo().activeProcessorCount)")
+    dlogNoHeader("Physical Memory".left(pad, pad: true) + ": " + "\(Double(ProcessInfo().physicalMemory)/1073741824) G")
+    dlogNoHeader("Thermal State".left(pad, pad: true) + ": " + "\(UIDevice.current.thermalState)")
 
-    DLogNoHeader("\n")
-    DLogNoHeader("Environment:")
+    dlogNoHeader("\n")
+    dlogNoHeader("Environment:")
     for entry in ProcessInfo().environment.sorted(by: { (left, right) -> Bool in
       pad = max(max(pad, left.key.count), right.key.count)
       return left.key < right.key
     }) {
-      DLogNoHeader("\(entry.key.left(pad, pad: true)): \(entry.value.right(80))")
+      dlogNoHeader("\(entry.key.left(pad, pad: true)): \(entry.value.right(80))")
     }
 
-    DLogNoHeader("")
+    dlogNoHeader("")
     let info = CTTelephonyNetworkInfo()
-    DLogNoHeader("carrierName".left(pad, pad: true) + ": " + "\(info.subscriberCellularProvider?.carrierName ?? "Has not been configured for carrier")")
-    DLogNoHeader("currentRadioAccessTechnology".left(pad, pad: true) + ": " + "\(info.currentRadioAccessTechnology ?? "Airplane Mode/No cell connection")")
+    dlogNoHeader("carrierName".left(pad, pad: true) + ": " + "\(info.subscriberCellularProvider?.carrierName ?? "Has not been configured for carrier")")
+    dlogNoHeader("currentRadioAccessTechnology".left(pad, pad: true) + ": " + "\(info.currentRadioAccessTechnology ?? "Airplane Mode/No cell connection")")
 
-    DLogNoHeader("cellularDataRestrictedState".left(pad, pad: true) + ": " + "\(cellularDataRestrictedState == .restrictedStateUnknown ? "unknown" : cellularDataRestrictedState == .restricted ? "restricted" : "not restricted")")
-    DLogNoHeader("ipAddresses".left(pad, pad: true) + ": " + "\(ipAddresses)")
+    dlogNoHeader("cellularDataRestrictedState".left(pad, pad: true) + ": " + "\(cellularDataRestrictedState == .restrictedStateUnknown ? "unknown" : cellularDataRestrictedState == .restricted ? "restricted" : "not restricted")")
+    dlogNoHeader("ipAddresses".left(pad, pad: true) + ": " + "\(ipAddresses)")
 
-    DLogNoHeader("Frameworks:")
+    dlogNoHeader("Frameworks:")
     let frameworks = Bundle.allFrameworks
     for framework in frameworks.filter({ (bundle) -> Bool in
       bundle.bundleIdentifier?.isEmpty != true && bundle.bundleIdentifier?.contains("com.apple") != true
     }).sorted(by: { (left, right) -> Bool in
       left.bundleIdentifier < right.bundleIdentifier
     }) {
-//      DLog(framework.bundleIdentifier ?? "")
+//      dlog(framework.bundleIdentifier ?? "")
       if let name = framework.bundleIdentifier?.components(separatedBy: "."), !name.isEmpty {
         if let infoDictionary = framework.infoDictionary {
           if let majorVersion = infoDictionary["CFBundleShortVersionString"] {
             if let minorVersion = infoDictionary["CFBundleVersion"] {
-              DLogNoHeader("\(name.third ?? ""): \(majorVersion) (\(minorVersion))")
+              dlogNoHeader("\(name.third ?? ""): \(majorVersion) (\(minorVersion))")
             }
           }
         }
       }
     }
-    DLogNoHeader("========================================================================================================\n")
+    dlogNoHeader("========================================================================================================\n")
   }
   
   public class func setup(userID: Int32, accountID: Int32, accountName: String?, userName: String?, userEmail: String?, environment: String) {
@@ -201,27 +201,27 @@ public class Logging: NSObject {
 //    Analytics.setUserProperty(String(accountID), forName: "account_id")
 //    Analytics.setUserProperty(environment, forName: "environment")
 
-    DLog("user: (\(identifier)) \(name) \(userEmail ?? "")", brief: true)
+    dlog("user: (\(identifier)) \(name) \(userEmail ?? "")", brief: true)
   }
 }
 
 //extension Logging: CrashlyticsDelegate {
 //  public func crashlyticsDidDetectReport(forLastExecution report: CLSReport) {
 //    if report.isCrash {
-//      DLog("Previous instance of app crashed:")
-//      DLogNoHeader("<= CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT ===")
-//      DLogNoHeader("Crash App Version: " + "\(report.bundleShortVersionString) (\(report.bundleVersion))")
-//      DLogNoHeader("Crash Date       : " + "\(report.crashedOnDate?.formattedDateTime() ?? "")")
-//      DLogNoHeader("Crash Report Date: " + "\(report.dateCreated.formattedDate())")
-//      DLogNoHeader("OS Version       : " + "\(report.osVersion) (\(report.osBuildVersion))")
-//      DLogNoHeader("Crash Report ID  : " + "\(report.identifier)")
-//      DLogNoHeader("Crash UserID     : " + "\(report.userIdentifier ?? "")")
-//      DLogNoHeader("Crash UserName   : " + "\(report.userName ?? "")")
-//      DLogNoHeader("Crash User Email : " + "\(report.userEmail ?? "")")
+//      dlog("Previous instance of app crashed:")
+//      dlogNoHeader("<= CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT ===")
+//      dlogNoHeader("Crash App Version: " + "\(report.bundleShortVersionString) (\(report.bundleVersion))")
+//      dlogNoHeader("Crash Date       : " + "\(report.crashedOnDate?.formattedDateTime() ?? "")")
+//      dlogNoHeader("Crash Report Date: " + "\(report.dateCreated.formattedDate())")
+//      dlogNoHeader("OS Version       : " + "\(report.osVersion) (\(report.osBuildVersion))")
+//      dlogNoHeader("Crash Report ID  : " + "\(report.identifier)")
+//      dlogNoHeader("Crash UserID     : " + "\(report.userIdentifier ?? "")")
+//      dlogNoHeader("Crash UserName   : " + "\(report.userName ?? "")")
+//      dlogNoHeader("Crash User Email : " + "\(report.userEmail ?? "")")
 //      if let customKeys = report.customKeys as? [String:Any] {
-//        DLogNoHeader("Crash Custom Keys: " + "\(customKeys.toSortedJSON(levels: 3) ?? "")")
+//        dlogNoHeader("Crash Custom Keys: " + "\(customKeys.toSortedJSON(levels: 3) ?? "")")
 //      }
-//      DLogNoHeader("== CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT ==>\n")
+//      dlogNoHeader("== CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT === CRASH REPORT ==>\n")
 //      crashDelegate?.crashResponder(report: report)
 //    }
 //  }
@@ -233,7 +233,7 @@ public class Logging: NSObject {
 // MARK: logFilePath is the location of the file to which console messages are being written
 public func setLogFilePath() -> String {
   prevLogFilePath = logFilePath
-  let path = (NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first ?? "").appending(pathComponent: "\(ProcessInfo().processName)-\(Date().formattedLogDateTime()).log")
+  let path = (NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first ?? "").appending(pathComponent: "\(ProcessInfo().processName)-\(Date().formattedlogDateTime()).log")
   logFilePath = path
   return path
 }
@@ -261,7 +261,7 @@ public var logFiles: [String] {
 }
 
 let logSemaphore = DispatchSemaphore(value: 1)
-public func DLog(_ message: String, file: String=#file, function: String=#function, line: Int=#line, brief: Bool=false) {
+public func dlog(_ message: String, file: String=#file, function: String=#function, line: Int=#line, brief: Bool=false) {
   let fileParts = file.components(separatedBy: "/")
   let fileName = fileParts.last!.components(separatedBy: ".").first!
 
@@ -277,17 +277,17 @@ public func DLog(_ message: String, file: String=#file, function: String=#functi
   logSemaphore.wait()             // Make sure this log entry is finished before writing another
   defer { logSemaphore.signal() }
 
-  DLogPrint(message.left(lineBreak), fileName: fileName, function: functionName, line: line)
+  dlogPrint(message.left(lineBreak), fileName: fileName, function: functionName, line: line)
   message = message.subString(lineBreak + 1)
 
   while !message.count.isEmpty {
     lineBreak = message.position(of: "\n") ?? message.count
-    DLogPrintNoHeader(message.left(lineBreak))
+    dlogPrintNoHeader(message.left(lineBreak))
     message = message.subString(lineBreak + 1)
   }
 }
 
-private func DLogPrint(_ message: String, fileName: String, function: String, line: Int) {
+private func dlogPrint(_ message: String, fileName: String, function: String, line: Int) {
 //  if !isRunningUnitTest {
 //    CLSNSLogv(">%@.%@(%d): %@", getVaList([fileName, function, line, message]))
 //  } else {
@@ -301,19 +301,19 @@ public func callerInfo(file: String=#file, function: String=#function, line: Int
   return "\(fileName).\(function)(\(line))"
 }
 
-public func DLogNoHeader(_ message:String) {
+public func dlogNoHeader(_ message:String) {
   var message = message
   var lineBreak = message.position(of: "\n") ?? message.count
-  DLogPrintNoHeader(message.left(lineBreak))
+  dlogPrintNoHeader(message.left(lineBreak))
   message = message.subString(lineBreak + 1)
   while !message.isEmpty {
     lineBreak = message.position(of: "\n") ?? message.count
-    DLogPrintNoHeader(message.left(lineBreak))
+    dlogPrintNoHeader(message.left(lineBreak))
     message = message.subString(lineBreak + 1)
   }
 }
 
-private func DLogPrintNoHeader(_ message: String) {
+private func dlogPrintNoHeader(_ message: String) {
 //  if !isRunningUnitTest {
 //    CLSNSLogv(">%@", getVaList([message]))
 //  } else {
@@ -354,6 +354,6 @@ public func logError(error: NSError?=nil, text: String?=nil, withAdditionalUserI
   let text = text ?? error?.localizedDescription ?? ""
 //  if let error = error {
 //    crashlyticsInstance?.recordError(error, withAdditionalUserInfo: info)
-    DLog(text + "\n\(info.toSortedJSON(levels: 4) ?? "")", file: fileName, function: function, line: line)
+    dlog(text + "\n\(info.toSortedJSON(levels: 4) ?? "")", file: fileName, function: function, line: line)
 //  }
 }

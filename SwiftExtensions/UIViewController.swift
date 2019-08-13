@@ -23,10 +23,10 @@ public extension UIViewController {
   func logPresentingStack(_ level: Int=0) {
     if let navController = self as? UINavigationController {
       for viewController in navController.viewControllers {
-        DLogNoHeader("\(" ".copies(level*2))\(viewControllerName).\(viewController.viewControllerName)")
+        dlogNoHeader("\(" ".copies(level*2))\(viewControllerName).\(viewController.viewControllerName)")
       }
     } else {
-      DLogNoHeader("\(" ".copies(level*2))\(viewControllerName)")
+      dlogNoHeader("\(" ".copies(level*2))\(viewControllerName)")
     }
     if let viewController = self.presentingViewController {
       viewController.logPresentingStack(level+1)

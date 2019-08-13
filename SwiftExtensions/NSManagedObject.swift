@@ -51,7 +51,7 @@ public extension NSManagedObject {
         // swiftlint:enable force_cast
         if attributeDescription.attributeType == NSAttributeType.transformableAttributeType {
           if let newValue = managedObjectContext?.performAndWait(value(forKey: attributeName)).unwrap(Any.self) {
-//            DLog("\(dictionaryKey) \(newValue)")
+//            dlog("\(dictionaryKey) \(newValue)")
             if let value = newValue as? [String] {
               dict[dictionaryKey] = value as AnyObject
             } else {
@@ -64,7 +64,7 @@ public extension NSManagedObject {
 //              type = attributeType
 //            }
 //          }
-//          DLog("\(currentEntity).\(dictionaryKey) (\(type)) = \(value)")
+//          dlog("\(currentEntity).\(dictionaryKey) (\(type)) = \(value)")
         } else {
           if let attributeClassName = attributeDescription.attributeValueClassName {
             if  attributeClassName == "NSDate" {
@@ -85,7 +85,7 @@ public extension NSManagedObject {
               }
             }
           } else {
-            DLog("Unknown attribute type for key: \(attributeName)")
+            dlog("Unknown attribute type for key: \(attributeName)")
           }
         }
       }
@@ -115,7 +115,7 @@ public extension NSManagedObject {
         } else {
           if let value = managedObjectContext?.performAndWait(value(forKey: relationshipKey)) {
             if value != nil {
-              DLog("Unknown relationship type: \(relationshipKey): \(value!)")
+              dlog("Unknown relationship type: \(relationshipKey): \(value!)")
             }
           }
         }
@@ -140,7 +140,7 @@ public extension NSManagedObject {
         error.logErrors()
         errorMsg = "Error occurred while converting object to JSON:\n\(error)\n\n\(dictionary)"
       }
-      DLog("\(errorMsg)")
+      dlog("\(errorMsg)")
       return errorMsg
     }
     return ""
@@ -155,7 +155,7 @@ public extension NSManagedObject {
       try validateForDelete()
       return true
     } catch let error as NSError {
-      DLog("\n> \(entity.name!) entity cannot be deleted:")
+      dlog("\n> \(entity.name!) entity cannot be deleted:")
       error.logErrors()
       return false
     }
